@@ -9,8 +9,8 @@ body {
   height: 100vh;
   background-color: #000;
   background-image: url(https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1517&q=80);
-  background-size: cover; /*  background-size: cover; CSS özelliği, bir arka plan görüntüsünün boyutunu ve konumunu kontrol etmek için kullanılır. Bu özellik, belirli bir öğenin arka planını dolduracak şekilde bir görüntüyü ölçeklendirmek için kullanılır. cover değeri, görüntünün öğe boyutunu korurken, öğenin tamamını kaplayacak şekilde boyutlandırılmasını sağlar. Ancak, görüntüyü tamamen kapsamak için gerektiğinde kesilebilir. */
-  background-position: center; /* center değeri, arka plan görüntüsünün yatay ve dikey olarak öğenin ortasına hizalanmasını ifade eder. Yani, görüntü, öğenin yatay ve dikey merkezine yerleştirilir.  */
+  background-size: cover;
+  background-position: center;
 }
 
 li {
@@ -26,8 +26,6 @@ a {
 a:hover {
   color: #edbb39;
 }
-
-/* Header ;  */
 
 header {
   position: relative;
@@ -51,49 +49,45 @@ header {
 
 .navbar .links {
   display: flex;
-  gap: 2rem; /* CSS'de "gap: 2rem;" ifadesi, bir grid container içindeki grid öğeleri arasındaki boşluğu belirler. Bu özellik genellikle bir display: grid; veya display: inline-grid; özelliği ile birlikte kullanılır.  */
+  gap: 2rem;
 }
 
 .navbar .toggle_btn {
   color: #fff;
   font-size: 1.5rem;
-  cursor: pointer; /* Fare imlecini değiştirir. */
+  cursor: pointer;
   display: none;
 }
 
 .action_btn {
   background-color: orange;
   color: #fff;
-  padding: 0.5rem 1rem; /*  Burada rem ayarlarıyla oyna. */
+  padding: 0.5rem 1rem;
   border: none;
-  outline: none; /*   CSS stilini kullanarak bir öğenin odaklandığında görünen varsayılan çerçeve (outline) efektini kaldırabilirsiniz.  */
+  outline: none;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: bold;
   cursor: pointer;
-  transition: scale 0.2 ease; /*  SS'deki transition özelliği, bir öğenin belirli bir özelliğinin (örneğin, boyut, rengi veya konumu) bir durumdan diğerine geçişini düzenlemek için kullanılır. ||  Bu örnekte, bir düğmeye (.button sınıfına sahip) hover (üzerine gelme) durumu uygulandığında, düğmenin ölçeğini 1den 1.2'ye çıkarmak istiyoruz. Bu geçişin süresi 0.2 saniye olacak ve geçişin hareketi ease fonksiyonu ile yumuşatılacaktır. transform özelliği, ölçeklendirme işlemini ifade eder. */
+  transition: scale 0.2s ease;
 }
 
 .action_btn:hover {
-  scale: 1.05; /* Bu örnekte, .element sınıfına sahip bir HTML öğesi belirtilen ölçekte (1.05) ölçeklendirilecek. scale(1.05) ifadesi, öğenin orijinal boyutunun %5 daha büyük olmasını sağlar. */
+  scale: 1.05;
   color: #fff;
 }
 
-/* DropDown Menu ;  */
-
 .dropdown_menu {
   display: none;
-  position: absolute; /* position: absolute; CSS özelliği, bir HTML öğesinin pozisyonunu belirlerken diğer öğelerden bağımsız olarak belirli bir konumda yerleştirilmesini sağlar  */
+  position: absolute;
   right: 2rem;
   top: 60px;
   height: 0;
   width: 300px;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(
-    15px
-  ); /* backdrop-filter: blur(15px); CSS özelliği, bir öğenin arka planını bulanıklaştırmak için kullanılır. Bu özellik, bir öğenin arka planını bulanık yaparak, öğenin üzerindeki içeriği daha belirgin hale getirmek veya estetik bir efekt oluşturmak için kullanılabilir.  */
+  backdrop-filter: blur(15px);
   border-radius: 10px;
-  overflow: hidden; /*  overflow: hidden; CSS özelliği, bir öğenin içeriği öğenin sınırları dışına taştığında, taşan kısmın gizlenmesini sağlar. */
+  overflow: hidden;
   transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -114,12 +108,8 @@ header {
   justify-content: center;
 }
 
-/* Hero */
-
 section#hero {
-  height: calc(
-    100vh - 60px
-  ); /* 100vh: Tarayıcı penceresinin yüksekliğini yüzde olarak temsil eder. Yani, ekranın tam yüksekliği kadar. 60px: 60 piksel. | Bu iki değer çıkarılarak öğenin yüksekliği belirlenir. Sonuç olarak, öğenin yüksekliği, tarayıcı penceresinin tam yüksekliğinden 60 piksel çıkarılarak elde edilir. Bu desen genellikle sayfanın tamamını kaplamak isteyen bir öğenin boyutunu belirlemede kullanılır.  */
+  height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,8 +122,6 @@ section#hero {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
-
-/* Responsive ;  */
 
 @media (max-width: 992px) {
   .navbar .links,
@@ -150,13 +138,9 @@ section#hero {
   }
 }
 
-/* Açıklama ;  */
-
-/* Bu kod bloğu, eğer ekran genişliği 992 piksel veya daha küçükse, belirli bir navigasyon çubuğu (navbar) tasarımını uygular. @media sorgusu, belirli ekran boyutlarına veya cihazlara özgü stil değişiklikleri yapmak için kullanılır. Bu durumda, 992 piksel veya daha küçük ekranlarda, normalde görünen bağlantılar (navbar .links) ve eylem düğmesi (navbar .action_btn) gizlenir, bunun yerine menüyü açma düğmesi (navbar .toggle_btn) görünür hale getirilir. */
-
 @media (max-widht: 576px) {
   .dropdown_menu {
     left: 2rem;
-    width: unset; /* width: unset; CSS özelliği, bir öğenin genişliğini sıfırlar ve öğenin belirlenen genişlik değerini veya kalıtım yoluyla elde ettiği genişlik değerini iptal eder  */
+    width: unset;
   }
 }
